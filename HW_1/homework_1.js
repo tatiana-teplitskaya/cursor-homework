@@ -1,15 +1,15 @@
-let applePrice = 15.678;
-let pearPrice = 123.965;
-let blackberryPrice = 90.2345;
+const applePrice = 15.678;
+const pearPrice = 123.965;
+const blackberryPrice = 90.2345;
 
-let maxPrice = Math.max(applePrice, pearPrice, blackberryPrice);
+const maxPrice = Math.max(applePrice, pearPrice, blackberryPrice);
 
-let minPrice = Math.min(applePrice, pearPrice, blackberryPrice);
+const minPrice = Math.min(applePrice, pearPrice, blackberryPrice);
 
-let sumOfPrices = applePrice + pearPrice + blackberryPrice;
+const sumOfPrices = applePrice + pearPrice + blackberryPrice;
 
-let sumOfRoundedPrices = Math.floor(applePrice) + Math.floor(pearPrice) + Math.floor(blackberryPrice);
-let roundedSum = Math.round(sumOfRoundedPrices / 100) * 100;
+const sumOfRoundedPrices = Math.floor(applePrice) + Math.floor(pearPrice) + Math.floor(blackberryPrice);
+const roundedSum = Math.round(sumOfRoundedPrices / 100) * 100;
 
 let isEven;
 if(sumOfRoundedPrices % 2 == 0){
@@ -17,16 +17,16 @@ if(sumOfRoundedPrices % 2 == 0){
 }
 else isEven = false;
 
-let change = 500 - sumOfPrices;
+const change = 500 - sumOfPrices;
 
-let roundedAverage = ((applePrice + pearPrice + blackberryPrice) / 3).toFixed(2);
+const roundedAverage = ((applePrice + pearPrice + blackberryPrice) / 3).toFixed(2);
 
-let discount = Math.random();
-let sumWithDiscount = (sumOfPrices - sumOfPrices * discount).toFixed(2);
+const discount = Math.random();
+const sumWithDiscount = (sumOfPrices - sumOfPrices * discount).toFixed(2);
 
-let income = (sumOfPrices / 2) - sumOfPrices * discount;
+const income = (sumOfPrices / 2) - sumOfPrices * discount;
 
-let template = `Максимальна ціна: ${maxPrice}
+const template = `Максимальна ціна: ${maxPrice}
 Мінімальна ціна: ${minPrice}
 Вартість всіх товарів: ${sumOfPrices}
 Вартість товарів округлена до сотень: ${roundedSum}
