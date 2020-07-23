@@ -17,7 +17,8 @@ if(sumOfRoundedPrices % 2 == 0){
 }
 else isEven = false;
 
-const change = 500 - sumOfPrices;
+const fee = 500;
+const change = fee - sumOfPrices;
 
 const roundedAverage = ((applePrice + pearPrice + blackberryPrice) / 3).toFixed(2);
 
@@ -29,6 +30,7 @@ const income = (sumOfPrices / 2) - sumOfPrices * discount;
 const template = `Максимальна ціна: ${maxPrice}
 Мінімальна ціна: ${minPrice}
 Вартість всіх товарів: ${sumOfPrices}
+Сума цілих вартостей товарів, округлених в меньшу сторону: ${sumOfRoundedPrices}
 Вартість товарів округлена до сотень: ${roundedSum}
 Чи є сума всіх товарів парним числом? ${isEven}
 Сума решти, якщо клієнт платить 500 грн: ${change}
