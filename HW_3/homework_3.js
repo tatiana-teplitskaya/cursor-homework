@@ -67,7 +67,7 @@ function isPalyndrom(word){
             continue;
             else
                 formattedWord += word[i].toLowerCase();
-    }
+    } 
     for (let i = formattedWord.length - 1, j = 0; i >= 0 && j < formattedWord.length - 1; i--, j++){
             if(formattedWord[i] != formattedWord[j]){
                 return false;
