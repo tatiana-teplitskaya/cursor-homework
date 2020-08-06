@@ -19,21 +19,12 @@ console.log(pairs);
 
 function addSubject(pairsOfStudents, themes){
     let pairsWithSubject = [];
+    for (let i = 0; i < pairsOfStudents.length; i++){
     let firstPairWithSubject = [];
-    firstPairWithSubject.push(pairsOfStudents[0].join(' і '));
-    firstPairWithSubject.push(themes[0]);
-
-    let secondPairWithSubject = [];
-    pairsWithSubject.push(firstPairWithSubject)
-    secondPairWithSubject.push(pairsOfStudents[1].join(' і '));
-    secondPairWithSubject.push(themes[1]);
-
-    let thirdPairWithSubject = [];
-    pairsWithSubject.push(secondPairWithSubject)
-    thirdPairWithSubject.push(pairsOfStudents[2].join(' і '));
-    thirdPairWithSubject.push(themes[2]);
-
-    pairsWithSubject.push(thirdPairWithSubject);
+    firstPairWithSubject.push(pairsOfStudents[i].join(' і '));
+    firstPairWithSubject.push(themes[i]);
+    pairsWithSubject.push(firstPairWithSubject);
+    }
     return pairsWithSubject;
 }
 
@@ -42,20 +33,20 @@ console.log(pairsPlusSubject);
 
 function addMark(students, marks){
     let studentsWithMarks = [];
-    studentsWithMarks.push([students[0], marks[0]], [students[1], marks[1]], [students[2], marks[2]], [students[3], marks[3]], [students[4], marks[4]], [students[5], marks[5]]);
+    for (let i = 0; i < students.length; i++){
+        studentsWithMarks.push([students[i], marks[i]]);
+    }
     return studentsWithMarks;
 }
 
 const studentsPlusMarks = addMark(students, marks);
 console.log(studentsPlusMarks);
 
-function addRandomMark(pairsPlusSubject){
+function addRandomMark(pairsWithSubject){
     let pairsWithMark = [];
-    for (let i = 0; i < pairsPlusSubject.length; i++){
+    for (let i = 0; i < pairsWithSubject.length; i++){
         const randomMark = Math.floor(1 + Math.random() * 5);
-        pairsWithMark.push(pairsPlusSubject[i]);
-        pairsWithMark[i].push(randomMark);
-        
+        pairsWithMark.push([...pairsWithSubject[i], randomMark]);
     }
     return pairsWithMark;
 }
